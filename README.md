@@ -68,9 +68,21 @@ Expanding the dataset for more comprehensive gesture coverage.
 
 Implementing multilingual translation support.
 
+
+
 Optimizing the model for mobile deployment.
 
 📄 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+ScreenShots
+
+<img width="659" alt="Screenshot 2025-01-03 at 1 24 34 PM" src="https://github.com/user-attachments/assets/ba78d4f7-ea82-4615-a405-a6e869819205" />
+<img width="698" alt="Screenshot 2025-01-03 at 1 24 51 PM" src="https://github.com/user-attachments/assets/610392da-5b02-42ec-8f28-fc7f5daa9b71" />
+
+<img width="710" alt="Screenshot 2025-01-03 at 1 25 00 PM" src="https://github.com/user-attachments/assets/63c23e50-08fa-48a6-8ebe-8c001ca5cfb2" />
+<img width="745" alt="Screenshot 2025-01-03 at 1 25 06 PM" src="https://github.com/user-attachments/assets/4b79e590-facf-4a64-8ef7-839a45388d60" />
+<img width="772" alt="Screenshot 2025-01-03 at 1 25 15 PM" src="https://github.com/user-attachments/assets/aec0cfed-8d95-431b-a6c6-8239e71687f8" />
+
 
