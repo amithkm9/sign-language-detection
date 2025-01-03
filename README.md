@@ -13,15 +13,16 @@ This project implements real-time sign language recognition, utilizing a custom 
 4. Scalable Design: Ready for integration into mobile and web-based applications.
 
 📂 Project Structure
-notebooks/: Contains Jupyter notebooks for data preprocessing, model training, and evaluation.
 
-models/: Includes pre-trained models such as action.h5.
+1. notebooks/: Contains Jupyter notebooks for data preprocessing, model training, and evaluation.
 
-data/: Stores custom dataset files, including .npy formats for training and validation.
+2. models/: Includes pre-trained models such as action.h5.
 
-scripts/: Python scripts for inference and deployment.
+3. data/: Stores custom dataset files, including .npy formats for training and validation.
 
-README.MD: This documentation.
+4. scripts/: Python scripts for inference and deployment.
+
+5. README.MD: This documentation.
 
 🛠️ Tools and Technologies
 
