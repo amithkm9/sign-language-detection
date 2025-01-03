@@ -1,4 +1,5 @@
 🖐️ Sign Language Detection Using Custom Dataset
+
 This project implements real-time sign language recognition, utilizing a custom dataset to train a robust and accurate gesture recognition model. The project aims to assist in bridging communication gaps by converting sign language into text.
 
 🚀 Features
