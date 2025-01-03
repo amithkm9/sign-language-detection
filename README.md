@@ -4,13 +4,13 @@ This project implements real-time sign language recognition, utilizing a custom 
 
 🚀 Features
 
-Custom Dataset: Designed and collected a unique dataset for model training to improve accuracy.
+1. Custom Dataset: Designed and collected a unique dataset for model training to improve accuracy.
 
-Real-Time Gesture Recognition: Leverages Mediapipe and TensorFlow for real-time hand tracking and gesture recognition.
+2. Real-Time Gesture Recognition: Leverages Mediapipe and TensorFlow for real-time hand tracking and gesture recognition.
 
-Model Training: Includes scripts and data to train custom models tailored to specific sign languages.
+3. Model Training: Includes scripts and data to train custom models tailored to specific sign languages.
 
-Scalable Design: Ready for integration into mobile and web-based applications.
+4. Scalable Design: Ready for integration into mobile and web-based applications.
 
 📂 Project Structure
 notebooks/: Contains Jupyter notebooks for data preprocessing, model training, and evaluation.
@@ -21,23 +21,23 @@ data/: Stores custom dataset files, including .npy formats for training and vali
 
 scripts/: Python scripts for inference and deployment.
 
-README.md: This documentation.
+README.MD: This documentation.
 
 🛠️ Tools and Technologies
 
-Libraries: Mediapipe, TensorFlow, OpenCV, NumPy.
+1. Libraries: Mediapipe, TensorFlow, OpenCV, NumPy.
 
-Framework: Python (Jupyter Notebook for experimentation).
+2. Framework: Python (Jupyter Notebook for experimentation).
 
-Model Format: The H5 model was trained using the custom dataset.
+3. Model Format: The H5 model was trained using the custom dataset.
 
 🎯 Use Cases
 
-Translating real-time gestures into text for communication aids.
+1. Translating real-time gestures into text for communication aids.
 
-Educational tools for learning and practicing sign language.
+2. Educational tools for learning and practicing sign language.
 
-Assistive devices for individuals with speech or hearing impairments.
+3. Assistive devices for individuals with speech or hearing impairments.
 
 🌐 How to Run
 
@@ -56,25 +56,24 @@ pip install -r requirements.txt
 
 Prepare your environment:
 
-Ensure the data/ folder contains the .npy dataset files.
+1. Ensure the data/ folder contains the .npy dataset files.
 
-The models/ folder includes the pre-trained action.h5 model.
+2. The models/ folder includes the pre-trained action.h5 model.
 
-Launch the notebook or run the Python scripts for inference.
+3. Launch the notebook or run the Python scripts for inference.
 
 🎯 Future Enhancements
 
-Expanding the dataset for more comprehensive gesture coverage.
+1. Expanding the dataset for more comprehensive gesture coverage.
 
-Implementing multilingual translation support.
+2. Implementing multilingual translation support.
 
-
-
-Optimizing the model for mobile deployment.
+3. Optimizing the model for mobile deployment.
 
 📄 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 ScreenShots
 
