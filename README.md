@@ -1,88 +1,130 @@
-🖐️ Sign Language Detection Using Custom Dataset
+# Sign Language Translator
 
-This project implements real-time sign language recognition, utilizing a custom dataset to train a robust and accurate gesture recognition model. By converting sign language into text, the project aims to assist in bridging communication gaps.
+A computer vision application that translates sign language gestures into text and speech in real-time.
 
-🚀 Features
+![Sign Language Translator Demo](demo-screenshot.png)
 
-1. Custom Dataset: Designed and collected a unique dataset for model training to improve accuracy.
+## Overview
 
-2. Real-Time Gesture Recognition: Leverages Mediapipe and TensorFlow for real-time hand tracking and gesture recognition.
+This project uses computer vision and machine learning to recognize American Sign Language (ASL) alphabet signs, numbers, and special characters. It processes webcam input to detect hand gestures and translates them into text and speech, making communication more accessible for the deaf and hard of hearing community.
 
-3. Model Training: Includes scripts and data to train custom models tailored to specific sign languages.
+## Features
 
-4. Scalable Design: Ready for integration into mobile and web-based applications.
+- **Real-time sign language detection** using webcam input
+- Recognizes **all 26 alphabet letters (A-Z)**, **numbers (0-9)**, space, and period
+- **Text-to-speech** conversion of recognized signs
+- User-friendly GUI with visual feedback
+- Ability to form words and sentences through sequential gesture recognition
+- Pause/resume functionality for better control
+- Gesture stabilization algorithm to prevent false detections
 
-📂 Project Structure
+## Requirements
 
-1. notebooks/: Contains Jupyter notebooks for data preprocessing, model training, and evaluation.
+- Python 3.6+
+- OpenCV
+- MediaPipe
+- scikit-learn
+- pyttsx3
+- Tkinter
+- NumPy
+- Pillow
 
-2. models/: Includes pre-trained models such as action.h5.
+## Installation
 
-3. data/: Stores custom dataset files, including .npy formats for training and validation.
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/sign-language-translator.git
+   cd sign-language-translator
+   ```
 
-4. scripts/: Python scripts for inference and deployment.
+2. Install required packages:
+   ```
+   pip install opencv-python mediapipe scikit-learn pyttsx3 pillow
+   ```
 
-5. README.MD: This documentation.
+## Usage
 
-🛠️ Tools and Technologies
+### Option 1: Running the Application
 
-1. Libraries: Mediapipe, TensorFlow, OpenCV, NumPy.
+To use the pre-trained model and start the application immediately:
 
-2. Framework: Python (Jupyter Notebook for experimentation).
-
-3. Model Format: The H5 model was trained using the custom dataset.
-
-🎯 Use Cases
-
-1. Translating real-time gestures into text for communication aids.
-
-2. Educational tools for learning and practicing sign language.
-
-3. Assistive devices for individuals with speech or hearing impairments.
-
-🌐 How to Run
-
-Clone the repository:
 ```
-bash
-Copy code
-git clone https://github.com/amithkm9/sign-language-detection.git
-```
-Install dependencies:
-```
-bash
-Copy code
-pip install -r requirements.txt
+python main.py
 ```
 
-Prepare your environment:
+### Option 2: Training Your Own Model
 
-1. Ensure the data/ folder contains the .npy dataset files.
+If you want to create and train your own model:
 
-2. The models/ folder includes the pre-trained action.h5 model.
+1. Collect training data:
+   ```
+   python collect_images.py
+   ```
+   This will activate your webcam and guide you through capturing images for each sign.
 
-3. Launch the notebook or run the Python scripts for inference.
+2. Create the dataset from collected images:
+   ```
+   python create_dataset.py
+   ```
 
-🎯 Future Enhancements
+3. Train the classifier:
+   ```
+   python train_classifier.py
+   ```
 
-1. Expanding the dataset for more comprehensive gesture coverage.
+4. Run the application with your custom model:
+   ```
+   python main.py
+   ```
 
-2. Implementing multilingual translation support.
+## Using Google Colab (Alternative)
 
-3. Optimizing the model for mobile deployment.
+If you want to train the model using Google Colab:
 
-📄 License
+1. Open the provided `Sign_Language_Translator.ipynb` in Google Colab
+2. Follow the step-by-step instructions in the notebook
+3. Download the trained model
+4. Place the model file in your local project directory
+5. Run the application locally
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Application Controls
 
+- **Reset Sentence**: Clears the current word and sentence
+- **Pause/Play**: Temporarily stops gesture recognition
+- **Speak Sentence**: Reads out the current sentence using text-to-speech
 
-ScreenShots
+## Project Structure
 
-<img width="659" alt="Screenshot 2025-01-03 at 1 24 34 PM" src="https://github.com/user-attachments/assets/ba78d4f7-ea82-4615-a405-a6e869819205" />
-<img width="698" alt="Screenshot 2025-01-03 at 1 24 51 PM" src="https://github.com/user-attachments/assets/610392da-5b02-42ec-8f28-fc7f5daa9b71" />
+- `collect_images.py`: Script to collect training images using webcam
+- `create_dataset.py`: Processes images to extract hand landmarks and create the dataset
+- `train_classifier.py`: Trains the Random Forest classifier
+- `main.py`: Main application script with GUI and real-time translation
+- `model.p`: Pre-trained model file
+- `data/`: Directory containing training images
+- `data.pickle`: Processed dataset file
 
-<img width="710" alt="Screenshot 2025-01-03 at 1 25 00 PM" src="https://github.com/user-attachments/assets/63c23e50-08fa-48a6-8ebe-8c001ca5cfb2" />
-<img width="745" alt="Screenshot 2025-01-03 at 1 25 06 PM" src="https://github.com/user-attachments/assets/4b79e590-facf-4a64-8ef7-839a45388d60" />
-<img width="772" alt="Screenshot 2025-01-03 at 1 25 15 PM" src="https://github.com/user-attachments/assets/aec0cfed-8d95-431b-a6c6-8239e71687f8" />
+## How It Works
 
+1. **Hand Detection**: MediaPipe is used to detect hand landmarks in webcam frames
+2. **Feature Extraction**: 21 hand landmarks are normalized and converted to 42 features
+3. **Classification**: A Random Forest classifier predicts the sign based on extracted features
+4. **Stabilization**: A buffering system ensures that predictions are stable before registering
+5. **Word/Sentence Formation**: Characters are combined to form words and sentences
+6. **Text-to-Speech**: The pyttsx3 library converts text to audio output
+
+## Customization
+
+- Modify `labels_dict` in `main.py` to change the mapping between class indices and characters
+- Adjust `registration_delay` to change how long each sign must be held to be recognized
+- Change `stabilization_buffer` size to make recognition more or less sensitive
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgments
+
+- MediaPipe for the hand landmark detection technology
+- OpenCV community for computer vision tools
+- scikit-learn team for machine learning capabilities
 
